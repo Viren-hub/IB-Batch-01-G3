@@ -26,8 +26,6 @@ fetch('https://api.covid19api.com/dayone/country/india').then((data) => {
         <td data-aos="fade-down">${values.Country}</td>
         <td data-aos="fade-right">${values.CountryCode}</td>
         <td data-aos="fade-up-left">${values.Provience}</td>
-        <td data-aos="fade-down-right">${values.City}</td>
-        <td data-aos="flip-up">${values.CityCode}</td>
         <td data-aos="fade-down-right">${values.Lat}</td>
         <td data-aos="slide-up">${values.Lon}</td>
         <td data-aos="slide-left">${values.Confirmed}</td>
@@ -70,6 +68,22 @@ function call(name) {
     </tr>`;
 
         });
-        document.getElementById("tablebody").innerHTML = tableData;
+         document.getElementById("tablebody").innerHTML = tableData;
+        // document.getElementById('tablebody').innerHTML = tableData;
+        // $(document).ready(function () {
+        //     $('.tab').dataTables({
+        //         "order": [[10, "desc"]]
+    
+        //     });
+        // }); 
     });
+
 }
+// function nextPage(){
+// document.getElementById('tablebody').innerHTML = tablebody;
+//                 $(document).ready(function() {
+//                     $('tablebody').DataTable( {
+//                         "order": [[ 10, "desc" ]]
+//                     } );
+//                 } );
+//             }

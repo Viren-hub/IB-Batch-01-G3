@@ -47,18 +47,18 @@ fetch('https://api.covid19api.com/dayone/country/india').then((data) => {
 
 
 
-    function call(name) {
-        fetch(`https://api.covid19api.com/dayone/country/${name}`).then((data) => {
+function call(name) {
+    fetch(`https://api.covid19api.com/dayone/country/${name}`).then((data) => {
 
-            return data.json();
-        }).then((objectData) => {
-            console.log(objectData[0].ID);
+        return data.json();
+    }).then((objectData) => {
+        console.log(objectData[0].ID);
 
 
-            let tableData = "";
+        let tableData = "";
 
-            objectData.map((values) => {
-                tableData += `<tr>
+        objectData.map((values) => {
+            tableData += `<tr>
 
          <td data-aos="fade-up">${values.ID}</td>
          <td data-aos="fade-down">${values.Country}</td>
@@ -75,16 +75,16 @@ fetch('https://api.covid19api.com/dayone/country/india').then((data) => {
          <td data-aos="fade-down">${new Date(values.Date).toLocaleDateString()}</td>
      </tr>`;
 
-            });
-            document.getElementById("tablebody").innerHTML = tableData;
-            //  $(document).ready(function () {
-            //      $('.table').DataTable({
-            //          "order": [[10, "desc"]]
-            //      });
-            //  });
         });
+        document.getElementById("tablebody").innerHTML = tableData;
+        // $(document).ready(function () {
+        //     $('.table').DataTable({
+        //         "order": [[10, "desc"]]
+        //     });
+        // });
+    });
 
-    }
+}
 
 
 

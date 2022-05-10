@@ -38,9 +38,11 @@ fetch('https://api.covid19api.com/dayone/country/india').then((data) => {
     });
 
     document.getElementById("tablebody").innerHTML = tableData;
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('.table').DataTable({
-            "order": [[10, "desc"]]
+            "order": [
+                [10, "desc"]
+            ]
         });
     });
 })
@@ -85,7 +87,3 @@ function call(name) {
     });
 
 }
-
-
-
-

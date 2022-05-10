@@ -16,24 +16,25 @@
             margin: 0px;
             padding: 0px;
         }
-
+        
         .nav {
             height: 700px;
             width: 300px;
         }
-
+        
         .all {
             display: flex;
             flex-direction: row;
         }
-
+        
         .tab {
             height: 100vh;
             width: 100%;
-            background: radial-gradient(circle, rgb(245, 171, 203) 0%, rgb(219, 230, 97) 100%);
+            /* background: radial-gradient(circle, rgb(245, 171, 203) 0%, rgb(219, 230, 97) 100%); */
             overflow: scroll;
         }
-        h1{
+        
+        h1 {
             text-align: center;
         }
     </style>
@@ -65,10 +66,11 @@
             </div>
 
         </div>
-
         <!--===========================Table Data============================-->
         <div class="tab" id="data">
-             <h1>Covid-19 Live Updates</h1>
+            <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+            <h1>Covid-19 Live Updates</h1>
             <table class="table table-fluid" id="">
                 <thead class="table-dark">
                     <tr class="text-center">
@@ -118,6 +120,33 @@
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
     <script src="./Ass-26.js"></script>
 
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Confirmed', 11],
+                ['Deaths', 2],
+                ['Recovered', 2],
+                ['Active', 2]
+            ]);
+
+            var options = {
+                title: 'Daily Corona Updates'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

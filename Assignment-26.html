@@ -16,27 +16,39 @@
             margin: 0px;
             padding: 0px;
         }
-        
+
         .nav {
             height: 700px;
             width: 300px;
         }
-        
+
         .all {
             display: flex;
             flex-direction: row;
         }
-        
+
         .tab {
             height: 100vh;
             width: 100%;
-            /* background: radial-gradient(circle, rgb(245, 171, 203) 0%, rgb(219, 230, 97) 100%); */
+            background: radial-gradient(circle, rgb(245, 171, 203) 0%, rgb(219, 230, 97) 100%);
             overflow: scroll;
         }
-        
-        <<<<<<< HEAD=======>>>>>>>4c7713f23e135a26a93935aec4dd4d29d4aaaa9d h1 {
+
+        h1 {
             text-align: center;
         }
+
+        .preloader{
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            background: white url("https://flevix.com/wp-content/uploads/2019/07/Spin-Preloader-1.gif")no-repeat center;
+            background-size: 30%;
+            z-index: 100;
+            align-items: center;
+
+        }  
+        
     </style>
 
 </head>
@@ -66,43 +78,36 @@
             </div>
 
         </div>
+
         <!--===========================Table Data============================-->
         <div class="tab" id="data">
-            <!-- <div id="piechart" style="width: 900px; height: 500px;"></div> -->
-
-            <div class="charts">
-                <div id="piechart" style="width: 900px; height: 500px;"></div>
-            </div>
-            <!--===========================Table Data============================-->
-            <div class="tab" id="data">
-
-                <h1>Covid-19 Live Updates</h1>
-                <table class="table table-fluid" id="">
-                    <thead class="table-dark">
-                        <tr class="text-center">
-                            <th scope="col">ID</th>
-                            <th scope="col">Country</th>
-                            <th scope="col">CountryCode</th>
-                            <th scope="col">Province</th>
-                            <th scope="col">Lat</th>
-                            <th scope="col">Lon</th>
-                            <th scope="col">Confirmed</th>
-                            <th scope="col">Deaths</th>
-                            <th scope="col">Recovered</th>
-                            <th scope="col">Active</th>
-                            <th scope="col">Date</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablebody">
+            <h1>Covid-19 Live Updates</h1>
+            <table class="table table-fluid" id="">
+                <thead class="table-dark">
+                    <tr class="text-center">
+                        <th scope="col">ID</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">CountryCode</th>
+                        <th scope="col">Province</th>
+                        <th scope="col">Lat</th>
+                        <th scope="col">Lon</th>
+                        <th scope="col">Confirmed</th>
+                        <th scope="col">Deaths</th>
+                        <th scope="col">Recovered</th>
+                        <th scope="col">Active</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody id="tablebody">
 
 
-                    </tbody>
-                </table>
-            </div>
+                </tbody>
+            </table>
         </div>
+    </div>
 
-        <!--=====================Pagination===================-->
-        <!-- <nav aria-label="Page navigation example">
+    <!--=====================Pagination===================-->
+    <!-- <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             <li class="page-item disabled">
                 <a class="page-link">Previous</a>
@@ -115,46 +120,19 @@
             </li>
         </ul>
     </nav>   -->
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
-        <!--===========Script Links=============-->
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-        <script src="./Ass-26.js"></script>
+    <!--===========Script Links=============-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="./Ass-26.js"></script>
 
 
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {
-                'packages': ['corechart']
-            });
-            google.charts.setOnLoadCallback(drawChart);
-
-            function drawChart() {
-
-                var data = google.visualization.arrayToDataTable([
-                    ['Task', 'Hours per Day'],
-                    ['Confirmed', 11],
-                    ['Deaths', 2],
-                    ['Recovered', 2],
-                    ['Active', 2]
-                ]);
-
-                var options = {
-                    title: 'Daily Corona Updates'
-                };
-
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-                chart.draw(data, options);
-            }
-        </script>
-
-        <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
@@ -163,8 +141,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
         crossorigin="anonymous"></script> -->
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
 </body>
 
 </html>

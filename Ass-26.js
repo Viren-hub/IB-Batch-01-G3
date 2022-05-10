@@ -10,6 +10,9 @@ function closeFunction() {
     document.getElementById("mainbox").innerHTML = "&#9776;Open";
 }
 
+var loader=`<div id="preloader" class="preloader"> </div>`;
+document.getElementById("tablebody").innerHTML=loader;
+
 fetch('https://api.covid19api.com/dayone/country/india').then((data) => {
 
     return data.json();

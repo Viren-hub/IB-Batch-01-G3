@@ -10,15 +10,14 @@ function closeFunction() {
     document.getElementById("mainbox").innerHTML = "&#9776;Open";
 }
 
-var loader=`<div id="preloader" class="preloader"> </div>`;
-document.getElementById("tablebody").innerHTML=loader;
+ var loader = `<div id="preloader" class="preloader"> </div>`;
+ document.getElementById("tablebody").innerHTML = loader;
 
 fetch('https://api.covid19api.com/dayone/country/india').then((data) => {
 
     return data.json();
-}).then((objectData) => {
+}).then((objectData) => { 
     console.log(objectData[0].ID);
-
 
     let tableData = "";
 
@@ -41,13 +40,13 @@ fetch('https://api.covid19api.com/dayone/country/india').then((data) => {
     });
 
     document.getElementById("tablebody").innerHTML = tableData;
-    $(document).ready(function() {
-        $('.table').DataTable({
-            "order": [
-                [10, "desc"]
-            ]
-        });
-    });
+     $(document).ready(function () {
+         $('.table').DataTable({
+             "order": [
+                 [10, "desc"]
+             ]
+         });
+     });
 })
 
 
